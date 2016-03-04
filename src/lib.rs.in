@@ -4,7 +4,7 @@ extern crate serde;
 ///
 /// Importance levels for messages
 ///
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, Hash)]
 pub enum Level {
     /// Warnings
     Warning,
@@ -19,7 +19,7 @@ pub enum Level {
 ///
 /// Lights that a message may activate
 ///
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, Hash)]
 pub enum Light {
     /// Activates the master warning lights
     MasterWarning,
@@ -30,7 +30,7 @@ pub enum Light {
 ///
 /// A message that components may submit to the CAS controller
 ///
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, Hash)]
 pub struct CASMessage {
     /// The importance level of this message
     pub level: Level,
