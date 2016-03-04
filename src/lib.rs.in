@@ -1,0 +1,44 @@
+
+extern crate serde;
+
+///
+/// Importance levels for messages
+///
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub enum Level {
+    /// Warnings
+    Warning,
+    /// Caution messages
+    Caution,
+    /// Advisory messages
+    Adivsory,
+    /// Status messages
+    Status,
+}
+
+///
+/// Lights that a message may activate
+///
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub enum Light {
+    /// Activates the master warning lights
+    MasterWarning,
+    /// Activates the master caution lights
+    MasterCaution,
+}
+
+///
+/// A message that components may submit to the CAS controller
+///
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct CASMessage {
+    /// The importance level of this message
+    pub level: Level,
+    /// The text displayed on the IECAS screen
+    pub text: String,
+    /// The absolute path to an audio file containing the sound to play,
+    /// or None for no audio
+    pub audio_path: Option<String>,
+    /// The light that this message will activate, or None to activate no lights
+    pub light: Option<Light>,
+}

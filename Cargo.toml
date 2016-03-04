@@ -1,0 +1,13 @@
+[package]
+name = "c604_cas"
+version = "0.1.0"
+authors = ["Sam Crow <samcrow@uw.edu>"]
+build = "build.rs"
+
+
+[build-dependencies]
+serde_codegen = "0.7"
+syntex = "0.29"
+
+[dependencies]
+serde = "0.7"
