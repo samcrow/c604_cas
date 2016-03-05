@@ -14,7 +14,7 @@
 /// The CAS controller plugin will assign a key of type u64 to the message and store it in the
 /// shared data `SHARED_OBJ_KEY`.
 ///
-pub const MSG_SUBMIT: u32 = 0x0F00FF00;
+pub const MSG_SUBMIT: i32 = 0x0F00FF00;
 
 ///
 /// A message number that plugins should use when clearing a submitted message to the CAS
@@ -22,7 +22,7 @@ pub const MSG_SUBMIT: u32 = 0x0F00FF00;
 ///
 /// Plugins should store the message's key in the shared data `SHARED_OBJ_KEY`.
 ///
-pub const MSG_REMOVE: u32 = 0x0F00FF01;
+pub const MSG_REMOVE: i32 = 0x0F00FF01;
 
 ///
 /// The name of a shared object used for submitting CASMessages
