@@ -34,4 +34,8 @@ pub const SHARED_OBJ_MESSAGE: &'static str = "c604/systems/cas/interface/message
 ///
 pub const SHARED_OBJ_KEY: &'static str = "c604/systems/cas/interface/message_key";
 
+/// The name of a shared object (with type ActiveMessages) that the CAS controller uses to
+/// publish active messages
+pub const SHARED_OBJ_ACTIVE_MESSAGES: &'static str = "c604/systems/cas/interface/active_messages";
+
 include!(concat!(env!("OUT_DIR"), "/lib.rs"));

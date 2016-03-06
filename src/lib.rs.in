@@ -42,3 +42,16 @@ pub struct CASMessage {
     /// The light that this message will activate, or None to activate no lights
     pub light: Option<Light>,
 }
+
+/// Contains all the active messages that may be displayed
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct ActiveMessages {
+    /// Status messages
+    pub status_messages: Vec<CASMessage>,
+    /// Advisory messages
+    pub advisory_messages: Vec<CASMessage>,
+    /// Caution messages
+    pub caution_messages: Vec<CASMessage>,
+    /// Warning messages
+    pub warning_messages: Vec<CASMessage>,
+}
